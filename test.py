@@ -1,8 +1,11 @@
-from seqseek import Chromosome, BUILD37, BUILD38
+from seqseek import Chromosome, BUILD37
 
 import read
 
-answer = 'ACCTGGTGAGGGGACATGGG'
-result = Chromosome(17, assembly=BUILD38).sequence(141224, 141244)
-assert result == answer, "doesn't match docs https://github.com/23andMe/seqseek"
+reference = Chromosome(17, assembly=BUILD37)
 
+for snp in read.genome():
+    if snp.chromosome == 'X':
+        print snp
+    # print snp.genotype, reference.sequence(snp.position, snp.position + len(snp.genotype))
+    

@@ -1,1 +1,2 @@
 seqseek
+-e git+https://github.com/superbobry/snpy.git#egg=snpy
